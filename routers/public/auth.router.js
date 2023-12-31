@@ -34,7 +34,7 @@ async function login(email, password) {
     if (user) {
       const passwordMatch = await comparePasswords(password, user.password);
       if (passwordMatch) {
-        const token = generateToken(user._id);
+        const token = generateToken(user._id, user.email);
         return {
           data: { user, token },
           success: true,

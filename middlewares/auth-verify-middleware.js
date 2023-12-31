@@ -10,7 +10,7 @@ function authVerify(req, res, next) {
 
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
-    req.user = { userId: decoded.userId };
+    req.user = { userId: decoded.userId, email: decoded.email };
     console.log(req.user);
     return next();
   } catch (error) {
