@@ -6,7 +6,7 @@ dotenv.config();
 const JWT_SECRET = process.env["JWT_SECRET"];
 
 const generateToken = (userId, email) => {
-  return jwt.sign({ userId, email }, JWT_SECRET, { expiresIn: "20s" });
+  return jwt.sign({ userId, email }, JWT_SECRET, { expiresIn: "24h" });
 };
 
 async function bcryptPassword(password) {
